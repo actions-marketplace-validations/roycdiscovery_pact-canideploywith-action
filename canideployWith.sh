@@ -15,6 +15,10 @@ application_params=$(echo "$applications" | awk -F, '
   }'
 )
 
+echo "applicattiions: $applicattiions"
+echo "application_params: $application_params"
+
+
 command="""
 docker run --rm \
  -e PACT_BROKER_BASE_URL=$pact_broker \
