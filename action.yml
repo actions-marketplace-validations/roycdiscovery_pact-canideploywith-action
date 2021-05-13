@@ -16,5 +16,5 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - run: ${{ github.action_path }}/canideployTo.sh
+    - run: ${{ github.action_path }}/canideployWith.sh
       shell: bash
