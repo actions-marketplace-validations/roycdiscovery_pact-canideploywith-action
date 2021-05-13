@@ -11,7 +11,7 @@ inputs:
     description: "Your pact broker token"
     required: true
   applications:
-    description: "A (strnig) comma seperated list of name:[version|latest] [number|tag]"
+    description: "A comma seperated (string) list of name:[version|latest] [number|tag]"
     required: true
 runs:
   using: "composite"
