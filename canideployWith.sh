@@ -10,14 +10,15 @@ application_params=$(echo "$applications" | awk -F, '
   {
     for (i=1; i< NF+1; i++){
       gsub(/: */, " --", $i)
-      printf "--pacticipant " $i 
-      printf (i<NF) ? " \\\n" : "\n"
+      printf " --pacticipant " $i 
     }
+
+    printf "\n"
   }'
 )
 
-echo "applicattiions: $applicattiions"
-echo "application_params: $application_params"
+echo "applications: $applications"
+echo "application_params: >>$application_params<<"
 
 
 command="""
