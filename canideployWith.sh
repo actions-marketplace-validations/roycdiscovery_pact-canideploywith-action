@@ -1,8 +1,16 @@
 #!/usr/bin/env bash
+# (See the README for syntax.)
 
-if [ "$applications" = "" ]
+MISSING=()
+[ ! "$pact_broker" ] && MISSING+=( "pact_broker" )
+[ ! "$pact_broker_token" ] && MISSING+=( "pact_broker_token" )
+[ ! "$application_name" ] && MISSING+=( "application_name" )
+[ ! "$applications" ] && MISSING+=( "applications" )
+
+if [ ${#MISSING[@]} -gt 0 ]
 then
-  echo "ERROR: 'applications' is not specified."
+  echo "ERROR: The following environment variables are not set:"
+  printf '\t%s\n' "${MISSING[@]}"
   exit 1
 fi
 
